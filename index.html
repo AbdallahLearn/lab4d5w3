@@ -29,33 +29,26 @@
         let goLight = document.getElementById('goLight'); // Corrected typo
     
         // Function to reset all lights
-        function resetLights() {
-          stopLight.style.display = 'black';
-          slowLight.style.display = 'black';
-          goLight.style.display = 'black';
-        }
-    
+        function turnoff() {
+        stopLight.style.backgroundColor = "#111";
+        slowLight.style.backgroundColor = "#111";
+        goLight.style.backgroundColor = "#111";
+}
         stop.addEventListener('click', function() {
-          resetLights(); // Reset all lights first
+            turnoff() // Reset all lights first
           stopLight.style.backgroundColor ='red'
           slowLight.style.display = 'black';
           goLight.style.display = 'black';
         });
     
         slow.addEventListener('click', function() {
-          resetLights(); 
+            turnoff()
           slowLight.style.backgroundColor ='orange'
-          slowLight.style.display = 'block';
-          goLight.style.display = 'black';
-          stopLight.style.display = 'black';
         });
     
         go.addEventListener('click', function() {
-          resetLights(); 
-          stopLight.style.display = 'black';
-          slowLight.style.display = 'black';
+            turnoff() 
           goLight.style.backgroundColor ='green'
-          goLight.style.display = 'block'; 
         });
   </script>
 </body>
