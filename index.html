@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Light</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="controlPanel">
+        <h1 id="stopButton" class="button">Stop</h1>
+        <h1 id="slowButton" class="button">Slow</h1>
+        <h1 id="goButton" class="button">Go</h1>
+      </div>
+      <div id="traffic-light">
+        <div id="stopLight" class="bulb"></div>
+        <div id="slowLight" class="bulb"></div>
+        <div id="goLight" class="bulb"></div>
+      </div>
+    
+      <script>
+        let stop = document.getElementById('stopButton');
+        let slow = document.getElementById('slowButton');
+        let go = document.getElementById('goButton');
+    
+        let stopLight = document.getElementById('stopLight');
+        let slowLight = document.getElementById('slowLight'); // Corrected typo
+        let goLight = document.getElementById('goLight'); // Corrected typo
+    
+        // Function to reset all lights
+        function resetLights() {
+          stopLight.style.display = 'black';
+          slowLight.style.display = 'black';
+          goLight.style.display = 'black';
+        }
+    
+        stop.addEventListener('click', function() {
+          resetLights(); // Reset all lights first
+          stopLight.style.backgroundColor ='red'
+          slowLight.style.display = 'black';
+          goLight.style.display = 'black';
+        });
+    
+        slow.addEventListener('click', function() {
+          resetLights(); 
+          slowLight.style.backgroundColor ='orange'
+          slowLight.style.display = 'block';
+          goLight.style.display = 'black';
+          stopLight.style.display = 'black';
+        });
+    
+        go.addEventListener('click', function() {
+          resetLights(); 
+          stopLight.style.display = 'black';
+          slowLight.style.display = 'black';
+          goLight.style.backgroundColor ='green'
+          goLight.style.display = 'block'; 
+        });
+  </script>
+</body>
+
+</html>
